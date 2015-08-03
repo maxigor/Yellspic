@@ -1,5 +1,6 @@
 angular.module('alurapic').controller('FotosController', function($scope, $http) {
 	$scope.fotos = [];
+	$scope.filtro = '';
 
 	$http.get('v1/fotos')
 	.success(function(dataFotos){ // dataFotos são as fotos que o $http.get pegou do link ou local
@@ -8,7 +9,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
 	})
 	.error(function(erro){
 		console.log(erro);
-	})
+	});
 
 /*
 	var promise = $http.get('v1/fotos'); //pega as imagens do link ou local
